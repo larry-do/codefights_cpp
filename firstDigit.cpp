@@ -1,16 +1,16 @@
-#include<iostream>
+char firstDigit(std::string inputString) {
+    for(char c : inputString)
+        if(isdigit(c))
+            return c;
+    return 0;
+}
+//
 char firstDigit(std::string inputString)
 {
     for(int i=0;i<inputString.length();i++)
         if(isdigit(inputString[i])) return inputString[i];
 }
-int main()
-{
-    std::cout<<firstDigit("var_1__Int")<<std::endl;
-    std::cout<<firstDigit("q2q-q")<<std::endl;
-    std::cout<<firstDigit("0ss")<<std::endl;
-    return 0;
-}
+
 /*
 Find the leftmost digit that occurs in a given string.
 
