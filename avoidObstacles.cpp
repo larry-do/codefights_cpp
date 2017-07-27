@@ -1,6 +1,5 @@
 int avoidObstacles(std::vector<int> a) {
-    for(int i = 1; ;++i)
-    {
+    for(int i = 1; ;++i){
         int t = 1;
         for(int j:a)
             t = t && j%i;
@@ -8,22 +7,16 @@ int avoidObstacles(std::vector<int> a) {
     }
 }
 //solution 2
-int avoidObstacles(std::vector<int> inputArray) {
-    std::sort(inputArray.begin(),inputArray.end());
-    for(int i=1;i<inputArray[inputArray.size()-1];i++)
-    {
+int avoidObstacles(std::vector<int> a) {
+    std::sort(a.begin(),a.end());
+    for(int i=1;i<a[a.size()-1];i++){
         int k=0;
-        for(int j=0;j<inputArray.size();j++)
-        {
-            if(inputArray[j]%i==0)
-                break;
-            else
-                k++;
-        }
-        if(k==inputArray.size())
-            return i;
+        for(int j=0;j<a.size();j++)
+            if(a[j]%i==0) break;
+            else k++;
+        if(k==a.size()) return i;
     }
-    return inputArray[inputArray.size()-1]+1;
+    return a[a.size()-1]+1;
 }
 /*
 You are given an array of integers representing coordinates of obstacles situated on a straight line.
