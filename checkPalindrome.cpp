@@ -1,11 +1,7 @@
-bool checkPalindrome(std::string inputString) {
-    std::string b,c;
-    b.assign(inputString,0,inputString.length()/2);
-    c.assign(inputString,(inputString.length()%2==0)?(inputString.length()/2):(inputString.length()/2+1),(inputString.length()/2));
-    int n=c.length();
-    for(int i=0;i<n/2;i++)
-        swap(c[i],c[n-i-1]);
-    return b.compare(c)?false:true;
+bool checkPalindrome(std::string a) {
+    std::string b = a;
+    std::reverse(b.begin(),b.end());
+    return a == b;
 }
 bool checkPalindrome(std::string inputString) {
     if (inputString.size() < 2)
