@@ -1,3 +1,6 @@
+bool checkPalindrome(std::string a){
+    return a == std::string(a.rbegin(),a.rend());
+}
 bool checkPalindrome(std::string a) {
     std::string b = a;
     std::reverse(b.begin(),b.end());
